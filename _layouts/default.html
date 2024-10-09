@@ -1,5 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <script type="text/javascript" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript">
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], // Inline math delimiters
+                displayMath: [['$$', '$$'], ['\\[', '\\]']] // Block math delimiters
+            }
+        };
+
+        window.addEventListener("load", function() {
+            MathJax.typeset();
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: "Roboto", sans-serif;
+            font-size: 20px;
+        }
+    </style>
 </head>
+<body>
+    <h1>{{ page.title }}</h1>
+    {{ content }}
+    <footer>
+        <p>
+            <a href="https://x.com/FibraDomingos" target="_blank">x.com</a> | 
+            <a href="https://github.com/gbragafibra" target="_blank">GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>

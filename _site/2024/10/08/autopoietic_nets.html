@@ -1,6 +1,32 @@
-<h1 id="autopoietic-networks">Autopoietic Networks</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript">
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], // Inline math delimiters
+                displayMath: [['$$', '$$'], ['\\[', '\\]']] // Block math delimiters
+            }
+        };
 
-<p>A type of cellular automaton based on the concept of <a href="https://en.wikipedia.org/wiki/Autopoiesis">autopoiesis</a> is explored, as introduced by <a href="https://en.wikipedia.org/wiki/Humberto_Maturana">Maturana</a> and <a href="https://en.wikipedia.org/wiki/Francisco_Varela">Varela</a> in <a href="https://doi.org/10.1007/978-94-009-8947-4">Autopoiesis and Cognition: The Realization of the Living</a>, and also a bit developed on in Principles of biological autonomy(1979) by Varela.</p>
+        window.addEventListener("load", function() {
+            MathJax.typeset();
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: "Roboto", sans-serif;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Autopoietic Networks</h1>
+    <p>A type of cellular automaton based on the concept of <a href="https://en.wikipedia.org/wiki/Autopoiesis">autopoiesis</a> is explored, as introduced by <a href="https://en.wikipedia.org/wiki/Humberto_Maturana">Maturana</a> and <a href="https://en.wikipedia.org/wiki/Francisco_Varela">Varela</a> in <a href="https://doi.org/10.1007/978-94-009-8947-4">Autopoiesis and Cognition: The Realization of the Living</a>, and also a bit developed on in Principles of biological autonomy(1979) by Varela.</p>
 
 <p>Autopoiesis can be viewed as the capacity of an organism to maintain <a href="https://doi.org/10.1016/j.jtbi.2015.02.029">organizational closure</a> or closure of constraints. These very briefly mean that any process (and respective constraints on it) needs to generate atleast another constraint. Here, processes and relations between them evolve in order to maintain such closure. Through this lens, any new adaptation or behaviour taken by an organism can be seen as a compensation to a pertubation (i.e. self-replication).</p>
 
@@ -8,11 +34,25 @@
 
 <p><a href="https://github.com/gbragafibra/autopoietic-nets">Code and examples</a></p>
 
-<p>A network with <code class="language-plaintext highlighter-rouge">N x N</code> units is initialized, with each unit’s state $∈ {0, 1}$ being randomly assigned. Over each iteration (with a max of <code class="language-plaintext highlighter-rouge">N_iter</code>), there’s a logic gate randomly chosen from a set (examples with <code class="language-plaintext highlighter-rouge">AND</code>, <code class="language-plaintext highlighter-rouge">OR</code> and <code class="language-plaintext highlighter-rouge">XOR</code>), for the update of each unit’s state according to its neighbors’ states (<code class="language-plaintext highlighter-rouge">extended</code> option to also include neighbors in the diagonals).</p>
+<p>A network with <code class="language-plaintext highlighter-rouge">N x N</code> units is initialized, with each unit’s state $∈ { 0, 1 }$ being randomly assigned. Over each iteration (with a max of <code class="language-plaintext highlighter-rouge">N_iter</code>), there’s a logic gate randomly chosen from a set (examples with <code class="language-plaintext highlighter-rouge">AND</code>, <code class="language-plaintext highlighter-rouge">OR</code> and <code class="language-plaintext highlighter-rouge">XOR</code>), for the update of each unit’s state according to its neighbors’ states (<code class="language-plaintext highlighter-rouge">extended</code> option to also include neighbors in the diagonals).</p>
 
-<p>If a unit maintains its state after an iteration, regardless of its neighbors, its $\Phi$ value (which is supposed to mimick closure) increases by 1. Moreover, if the states respective to consecutive iterations are different, $\Phi$ is reset to 0. If $\Phi \geq \epsilon$, then the neighbors take the value of the main unit’s state, and an ensemble is formed. With regard to this, $\epsilon$ can be fixed (<code class="language-plaintext highlighter-rouge">fix = True</code>) or evolve over time (<code class="language-plaintext highlighter-rouge">fix = False</code>) with $ε = \textrm{int}\left(\frac{\textrm{iter}(1 - \textrm{H}(S))}{k}\right)$, where $\textrm{iter}$ is the number of iterations chosen, $\textrm{H}(S)$ the entropy of the net, and $k$ being an assigned integer. Additionally, there are two other options: <code class="language-plaintext highlighter-rouge">geq_cond = True</code> for $\Phi \geq \epsilon$ and <code class="language-plaintext highlighter-rouge">geq_cond = False</code> for $\Phi = \epsilon$.</p>
+<p>If a unit maintains its state after an iteration, regardless of its neighbors, its $\Phi$ value (which is supposed to mimick closure) increases by 1. Moreover, if the states respective to consecutive iterations are different, $\Phi$ is reset to 0. If $\Phi \geq \epsilon$, then the neighbors take the value of the main unit’s state, and an ensemble is formed. With regard to this, $\epsilon$ can be fixed (<code class="language-plaintext highlighter-rouge">fix = True</code>) or evolve over time (<code class="language-plaintext highlighter-rouge">fix = False</code>) with</p>
+
+\[ε = \textrm{int}\left(\frac{\textrm{iter}(1 - \textrm{H}(S))}{k}\right)\]
+
+<p>where $\textrm{iter}$ is the number of iterations chosen, $\textrm{H}(S)$ the entropy of the net, and $k$ being an assigned integer. Additionally, there are two other options: <code class="language-plaintext highlighter-rouge">geq_cond = True</code> for $\Phi \geq \epsilon$ and <code class="language-plaintext highlighter-rouge">geq_cond = False</code> for $\Phi = \epsilon$.</p>
 
 <h3 id="some-results">Some results</h3>
 
-<p><a href="https://www.youtube.com/watch?v=Az061cv_s7A"><img src="https://img.youtube.com/vi/Az061cv_s7A/0.jpg" alt="autopoietic_nets" /></a></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Az061cv_s7A" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
+<p><a href="../index.html">Back</a></p>
+
+    <footer>
+        <p>
+            <a href="https://x.com/FibraDomingos" target="_blank">x.com</a> | 
+            <a href="https://github.com/gbragafibra" target="_blank">GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>

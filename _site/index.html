@@ -3,24 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universal Miscellany</title>
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript">
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], // Inline math delimiters
+                displayMath: [['$$', '$$'], ['\\[', '\\]']] // Block math delimiters
+            }
+        };
+
+        window.addEventListener("load", function() {
+            MathJax.typeset();
+        });
+    </script>
+
     <style>
-        body{
+        body {
             font-family: "Roboto", sans-serif;
             font-size: 20px;
-
         }
     </style>
 </head>
 <body>
     <h1>Universal Miscellany</h1>
     <p>Exploring a bit.</p>
-    <h2>Posts</h2>
-    <ul>
-        
-            <li><a href="/2024/10/08/autopoietic_nets.html">Autopoietic Networks</a></li>
-        
-    </ul>
+<h2>Posts</h2>
+<ul>
+    
+        <li><a href="/2024/10/08/autopoietic_nets.html">Autopoietic Networks</a></li>
+    
+</ul>
 
     <footer>
         <p>
