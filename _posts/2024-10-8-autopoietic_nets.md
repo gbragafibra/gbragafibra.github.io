@@ -20,7 +20,7 @@ If a unit maintains its state after an iteration, regardless of its neighbors, i
 
 ### Some results
 
-[![autopoietic_nets](https://img.youtube.com/vi/Az061cv_s7A/0.jpg)](https://www.youtube.com/watch?v=Az061cv_s7A)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Az061cv_s7A" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 
