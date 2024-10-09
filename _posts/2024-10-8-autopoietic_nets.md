@@ -28,4 +28,4 @@ where $\textrm{iter}$ is the number of iterations chosen, $\textrm{H}(S)$ the en
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Az061cv_s7A" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-[Back](../index.html)
+[Back](../../../index.html)
