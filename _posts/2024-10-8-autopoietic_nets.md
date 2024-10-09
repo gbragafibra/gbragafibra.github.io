@@ -12,7 +12,7 @@ Autopoiesis can be viewed as the capacity of an organism to maintain [organizati
 
 [Code and examples](https://github.com/gbragafibra/autopoietic-nets)
 
-A network with `N x N` units is initialized, with each unit's state $∈ \{ 0, 1 \}$ being randomly assigned. Over each iteration (with a max of `N_iter`), there's a logic gate randomly chosen from a set (examples with `AND`, `OR` and `XOR`), for the update of each unit's state according to its neighbors' states (`extended` option to also include neighbors in the diagonals).
+A network with `N x N` units is initialized, with each unit's state $∈ \{ 0, 1 \}$ being randomly assigned. Over each iteration (with a max of `N_iter`), there's a logic gate randomly chosen (global, that is, for all units) from a set (examples with `AND`, `OR` and `XOR`), for the update of each unit's state according to its neighbors' states (`extended` option to also include neighbors in the diagonals).
 
 If a unit maintains its state after an iteration, regardless of its neighbors, its $\Phi$ value (which is supposed to mimick closure) increases by 1. Moreover, if the states respective to consecutive iterations are different, $\Phi$ is reset to 0. If $\Phi \geq \epsilon$, then the neighbors take the value of the main unit's state, and an ensemble is formed. With regard to this, $\epsilon$ can be fixed (`fix = True`) or evolve over time (`fix = False`) with 
 
