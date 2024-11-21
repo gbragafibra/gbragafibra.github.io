@@ -24,46 +24,46 @@ There are multiple variants, such that [main2.py](https://github.com/gbragafibra
 
 It is worth noting that the aim is to get behaviour increasingly closer to being characterized as autopoietic, and that these examples are far from such.
 
-![](../gifs/c1.gif)
+![](/gifs/c1.gif)
 
-![](../gifs/c2.gif)
+![](/gifs/c2.gif)
 
-![](../gifs/c3.gif)
+![](/gifs/c3.gif)
 
-![](../gifs/c4.gif)
+![](/gifs/c4.gif)
 
-![](../gifs/c5.gif)
+![](/gifs/c5.gif)
 
-![](../gifs/c6.gif)
+![](/gifs/c6.gif)
 
-![](../gifs/c7.gif)
+![](/gifs/c7.gif)
 
-![](../gifs/c8.gif)
+![](/gifs/c8.gif)
 
-![](../gifs/c9.gif)
+![](/gifs/c9.gif)
 
-![](../gifs/c10.gif)
+![](/gifs/c10.gif)
 
-![](../gifs/c11.gif)
+![](/gifs/c11.gif)
 
-![](../gifs/c12.gif)
+![](/gifs/c12.gif)
 
-![](../gifs/c13.gif)
+![](/gifs/c13.gif)
 
-![](../gifs/c14.gif)
+![](/gifs/c14.gif)
 
-![](../gifs/c15.gif)
+![](/gifs/c15.gif)
 
-![](../gifs/c16.gif)
+![](/gifs/c16.gif)
 
-![](../gifs/c17.gif)
+![](/gifs/c17.gif)
 
-![](../gifs/c18.gif)
+![](/gifs/c18.gif)
 
-![](../gifs/c19.gif)
+![](/gifs/c19.gif)
 
-![](../gifs/c20.gif)
+![](/gifs/c20.gif)
 
-![](../gifs/c21.gif)
+![](/gifs/c21.gif)
 
 [Back](https://gbragafibra.github.io)
