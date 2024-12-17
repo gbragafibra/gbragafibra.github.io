@@ -7,8 +7,8 @@
     <script type="text/javascript">
         window.MathJax = {
             tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']], // Inline math delimiters
-                displayMath: [['$$', '$$'], ['\\[', '\\]']] // Block math delimiters
+                inlineMath: [['$', '$'], ['\\(', '\\)']], 
+                displayMath: [['$$', '$$'], ['\\[', '\\]']] 
             }
         };
 
@@ -18,10 +18,34 @@
     </script>
 
     <style>
-        body {
-            font-family: "Roboto", sans-serif;
-            font-size: 20px;
-        }
+    @font-face {
+        font-family: 'CMU Serif';
+        src: url('https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@1.0.0/fonts/serif/cmunrm.woff2') format('woff2'),
+             url('https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@1.0.0/fonts/serif/cmunrm.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body {
+        font-family: 'CMU Serif', serif;
+        font-size: 20px;
+        margin: 50px 15%;
+        line-height: 1.5;
+        background-color: #fff;
+        color: #000;
+        text-shadow: 0.00em 0.00em 0 currentColor;
+    }
+
+    h1 {
+        text-align: center; 
+        font-weight: bold;
+    }
+
+    footer {
+        text-align: center; 
+        margin-top: 20px;
+        font-size: 16px;
+    }
     </style>
 </head>
 <body>
@@ -30,7 +54,7 @@
 <h2>Posts</h2>
 <ul>
     
-        <li><a href="/2024/10/11/organisms.html">Organisms Aren't, They Happen</a></li>
+        <li><a href="/2024/12/17/notes_pattee.html">Notes on Pattee's 'The physics of symbols: bridging the epistemic cut' and other things</a></li>
     
         <li><a href="/2024/10/08/autopoietic_nets.html">Autopoietic Networks</a></li>
     
