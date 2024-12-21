@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@1.0.0/fonts/serif/cmunrm.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@1.0.0/fonts/serif/cmunrm.woff" as="font" type="font/woff" crossorigin="anonymous">
+
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript">
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], 
+                displayMath: [['$$', '$$'], ['\\[', '\\]']] 
+            }
+        };
+
+        window.addEventListener("load", function() {
+            MathJax.typeset();
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const footnotes = document.querySelectorAll('.footnote');
+            footnotes.forEach(footnote => {
+                footnote.addEventListener('mouseenter', () => {
+                    MathJax.typeset();
+                });
+            });
+        });
+    </script>
+
+    <style>
+    body {
+        font-family: 'CMU Serif', serif; 
+        font-size: 20px;
+        margin: 50px 15%;
+        line-height: 1.5;
+        background-color: #fff;
+        color: #000;
+        text-shadow: 0.00em 0.00em 0 currentColor;
+    }
+
+    h1 {
+        text-align: center; 
+        font-weight: bold;
+    }
+
+    footer {
+        text-align: center; 
+        margin-top: 20px;
+        font-size: 16px;
+    }
+    .footnote {
+        position: relative;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 1em;
+        vertical-align: super; 
+    }
+
+    .footnote:hover::after {
+        content: attr(data-footnote);
+        position: absolute;
+        top: 20px;
+        left: 0;
+        padding: 15px;
+        background-color: #333;
+        color: white;
+        border-radius: 5px;
+        font-size: 14px;
+        display: block;
+        white-space: normal;
+        width: 300px;
+        max-height: 30vh;
+        overflow: auto; 
+        z-index: 9999;
+        box-sizing: border-box;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    </style>
+</head>
+<body>
+    <h1>A few notes on Deacon's autogen</h1>
+    <p>There is an infinitude of dynamical systems which show self-organizing properties in Nature, and that nonetheless aren’t organisms. Deacon, one can argue, is more interested in the minimal system which might show the capacity for semiosis<span class="footnote" data-footnote="As opposed to the concept of system autonomy which hopefully will be clear in a bit.">1</span>, and these notes mostly refer to his autogen model of such minimal system as introduced and developed in [<a href="#ref-1">1</a>, <a href="#ref-2">2</a>].</p>
+
+<p>Deacon understands that self-organization isn’t enough. That is, majority of the self-organizing processes that we see are inherently dissipative, and consequently return to equilibrium. What is then needed is a way to couple a few of these self-organizing processes, such that they compensate for eachother’s dissipative tendencies. A better discussion of this, additionally to the references put prior, is present in [<a href="#ref-3">3</a>, <a href="#ref-4">4</a>].</p>
+
+<p>The autogen<span class="footnote" data-footnote="Short for autogenic virus.">2</span> is composed by two self-organizing processes: reciprocal catalysis (autocatalysis) and self-assembly. These two are complementary processes, such that they compensate for eachother’s dissipative tendencies, as Deacon writes [<a href="#ref-2">2</a>]:</p>
+
+<blockquote>
+  <p>[…] are chemically complementary to one another because they each tend to
+produce conditions that are necessary for the other to occur. So reciprocal catalysis
+produces high locally asymmetric concentrations of a small number of molecular
+species while self-assembly requires persistently high local concentrations of a single species of component molecules. Likewise, self-assembly produces constraint on
+molecular difusion while reciprocal catalysis requires limited diffusion of interdependent catalysts in order to occur. In this way reciprocal catalysis and self-assembly are molecular processes that each produce the boundary conditions that are critical for supporting each other. These process can become coupled and their reciprocal relationships linked
+if one of the molecular side products generated in a reciprocal catalytic process
+tends to self-assemble into a closed structure. In this case capsid formation will
+tend to occur most effectively where reciprocal catalysis occurs. But this increases
+the probability that capsids will tend to grow to enclose a sample of the reciprocal catalysts that both produce one another and capsid-forming molecules.
+As a result, catalysts that reciprocally depend on one another to be produced
+will tend to be co-localized, and prevented from diffusing away from one another.
+While contained, catalysis will quickly cease when substrates are used up, but in
+the case that the capsid is subsequently damaged and spills its contents, more catalysts and capsid molecules will be synthesized if there are additional substrate
+molecules nearby. So damage that causes an otherwise inert capsid to spill its
+catalytic contents into an environment with available substrates will initiate a process that effectively repairs the damage and reconstitutes its inert form. Moreover,
+depending on the extent of the damage, the distribution of catalytic contents, and
+the concentrations of substrate molecules the process could potentially produce a
+second copy of the original from the excess catalyst and capsid molecules that are
+generated.</p>
+</blockquote>
+
+<p>Such autogen then has minimal capacities for both self-repair and self-reproduction. Furthermore, such self-reproduction capacity is even possible when the autogen is in its inert state when followed by significant capsid disruption<span class="footnote" data-footnote="That is, with a fully formed capsid or boundary.">3</span>. This capacity can be linked (proportionally) to substrate concentration in the environment, such that these substrate molecules “compete” for bonds with the capsid aggregates, eventually decreasing the integrity of the capsid, and depending on the distribution of the spillage of the molecules, potentially forming multiple other autogen units (through the autocatalytic and self-assembly processes). It is also understood that variability can be introduced into the autogen [<a href="#ref-2">2</a>]:</p>
+
+<blockquote>
+  <p>Autogens are not only able to self-repair, but because of their cycling from open
+to closed organization they will also tend to acquire and exchange molecules with
+their environment. Captured molecules that incidentally share catalytic inter-reactivity with autogen catalysts or capsid molecules will tend to be incorporated and replicated. This will create variant autogen lineages. Those captured molecules that don’t
+interact with autogen-intrinsic molecules or impede the process without being lethal
+will tend to get crowded out and eventually passively expelled into the environment
+in successive reproductions because they are not replicated. This provides a capacity
+to correct error and to evolve.
+So autogenesis provides what amounts to a constraint production and preservation ratchet. During the dynamical phase new components are produced but because
+of their co-dependent relationships to one another the constraints that provide the
+reciprocal boundary conditions are also produced as the probability of occurrence
+of the component self-organizing processes increases. Together these reciprocal and
+recursive relationships would make autogenic viruses minimally evolvable.</p>
+</blockquote>
+
+<p>Such cycles can be presumably captured by similar concepts such as Work-Constraint (W-C) cycles [<a href="#ref-5">5</a>], closure of constraints (akin to organizational closure) [<a href="#ref-6">6</a>], and other ones, such that some discussion between these (and teleodynamics) is present in [<a href="#ref-4">4</a>].</p>
+
+<p>But as von Neumann [<a href="#ref-7">7</a>] and later Pattee [<a href="#ref-8">8</a>]<span class="footnote" data-footnote="Of course, this is not an exhaustive description, and there's a miriad of other people who have talked about this.">4</span> described, for a system to have open-ended evolvability, the constraints which are associated to the description of the system can’t be associated to rate-dependent dynamics. In other words, some structures which are to serve as descriptions of the whole system, need to be largely immutable to rate-dependent dynamics. And as Pattee, and adopting the following term by Luis Rocha [<a href="#ref-9">9</a>], seems to claim, organisms have semiotic closure. They have their symbolic (rate-independent) and physical (rate-dependent) domains completely coupled.</p>
+
+<p>Deacon takes into account Dyson’s approach [<a href="#ref-10">10</a>]<span class="footnote" data-footnote="A good account of other approaches is present in [11].">5</span>, where nucleotides initially serve an energetic purpose and later an informational one [<a href="#ref-2">2</a>]:</p>
+
+<blockquote>
+  <p>Consider the following enhancement of simple autogenesis. If another of the side
+products produced by autogenic reciprocal catalysis is a molecule like the nucleotides ATP and GDP that can acquire and give up energy carried in pyrophosphate
+bonds, the availability of this generic free energy could potentially facilitate more
+effective catalysis and drive otherwise energetically unfavorable reactions. This could provide a sort of energy-assisted autogenesis which would tend to out-perform
+spontaneous autogenesis and be favored by natural selection. This could also enable a wider variety of potential substrate molecules to be useful, because the energy
+to drive reciprocal catalysis would not need to be derived from substrate lysis. […] But the availability of high-energy molecules is only useful during dynamic
+endergonic processes and can be disruptive of exergonic reactions and stable molecular structures. So energetic phosphates could cause potential damage during the
+inert phase of autogenesis. To be preserved safely and intact so they can be available
+when again catalysis is required they need to be somehow stored in an nonreactive
+form.
+Nonreactive nucleotide-based molecules are of course well-known. They are
+DNA and RNA molecules. In these nucleotide polymers the phosphate residues
+serve as the links between adjacent sugars and so are nonreactive. By linking them
+into a polymer with phosphates unexposed, they can be effectively “stored” for later
+use via depolymerization. In this evolutionary scenario, then, the initial function of
+polynucleotide molecules is presumed to be energetic, and only later in evolution do
+they become recruited for their informational functions.</p>
+</blockquote>
+
+<p>Deacon then proceeds in explaining how the constraints of the system can become rate-independent, effectively being <em>offloaded</em> onto energy-degenerate structures, and preventing a possible <em>molecular combinatorial catastrophe</em><span class="footnote" data-footnote="From [2]: 'A molecular combinatorial catastrophe can arise for autogenesis when the number of interdependent molecular interactions required to produce successful autogenic repair or reproduction increases. As the number of molecular species that need to interact increases linearly, the number of possible cross-reactions that could occur between members of the set increases geometrically. This is a problem because only a small fraction of these interactions will be supportive of autogenesis. The proliferation of alternative interaction possibilities will therefore compete with supportive interactions—using up critical components and wasting free energy. This will decrease efficiency and impede reproduction. So autogenic systems like the ones described above have limited evolvability, making autogenic evolution improbable beyond very simple forms. So unless non-supportive reactions can be selectively suppressed, autogenesis cannot lead to more complex forms of life.'.">6</span> [<a href="#ref-2">2</a>]:</p>
+
+<blockquote>
+  <p>[…] all five of the major nucleotide molecules (adenine, thymine, guanine, cytosine, and uracil) are capable of carrying and transferring phosphates. […]
+The phosphates are, however, attached to the opposite end of the nucleotide (to the
+ribose sugar) and so this diference in base minimally afects phosphate interactions.
+This results in the lack of any preferred phosphate bonding affinity between nucleotides during polymerization (a critical property for their informational role in living
+cells). As a result, diverse nucleotides will tend to form polymers of random order.
+And yet, although the sequence pattern of nucleotides is arbitrary, the specifc nucleotide sequence produces a slightly different three dimensional conformation of the
+polymer at that location.
+But as a relatively inert linear molecule, the structural properties of nucleotide
+polymers make them ideal to serve as templates. This is because conformation differences along the length of the molecule caused by the local nucleotide sequence
+provide a heterogeneous linear surface onto which other molecules can weakly
+bind. These structural differences will determine corresponding differences in how
+other molecules will tend to attach to the polymer due to their shape and charge
+complementarities. Since there will be both catalysts and polynucleotides within the
+inert autogen capsid, free catalysts will tend to associate with free nucleotide polymers with respect to these structural complementarities. The attached catalysts will
+therefore tend to be arranged into distinct sequences along the length of an extended
+nucleotide. The spatial correlation relationships between catalysts aligned along a nucleic
+acid polymer will thereby tend to constrain the probability of particular catalytic
+interactions, increasing some and suppressing others. In this way the structural constraints of the template molecule can bias and constrain the interaction probabilities
+of the catalysts. This can lead to sequence-specifc selection, since the order of nucleotides can
+affect the probabilities of catalyst interactions. Sequences that constrain catalyst
+interaction probabilities closer to the optimal interaction network will be selectively retained because of higher reproduction and repair rates, and the nucleotide
+sequences that correspond to this will be more likely preserved and replicated.
+In this way the template molecule can, in effect, offload some fraction of system
+dynamical constraints onto a structure that is not directly incorporated into or
+modifed by the dynamics. Because it is supported by template structure and not by any catalyst-intrinsic
+interaction tendencies this shifts the source of interaction constraints from catalyst properties to template properties. Since the template is not transformed by
+chemical reactions it can serve as a more stable source of memory and instruction
+allowing catalysts to be replaced by other kinds of molecules with chemical properties that might have superior catalytic capacity irrespective of their interaction specificity. The template is also subject to quite different chemical and physical
+infuences than is the rest of the system. But the informational codependence
+between template and dynamics means that template modifications will have consequences for the dynamical organization of the whole system. Thus continuity of
+constraint across the change in molecular substrate can bring otherwise dynamically unrelated and independent physical–chemical properties into interaction
+with one another in ways that exploit their possible synergies.</p>
+</blockquote>
+
+<p>To make a long story short, this <em>offloading</em> allows some separation of the constraints imposed in the system from rate-dependent dynamics, thus rendering it evolvable in an open-ended manner. Such offloading is indeed random, but through selection, nucleotide polymer sequences which better represent the autocatalytic and self-assembly network (with optimal replication and repair rates) are going to get selected.</p>
+
+<p>Deacon then proceeds talking about <em>semiotic scaffolding</em> [<a href="#ref-12">12</a>], as a way to bridge such primeval scenario with some information-enconding capacity, and the one of enormous complexity seen today with the genetic code and all other processes associated to the central dogma of molecular biology and “exceptions” of it.</p>
+
+<p>Although what I don’t understand (and as hinted in the start), as has also been noted in [<a href="#ref-13">13</a>, <a href="#ref-14">14</a>] and to which Deacon responded [<a href="#ref-15">15</a>], is if the autogen actually has autonomy. Although the autogen shows a capacity for self-repair and self-maintenance it seems to be purely <em>reactive</em>, being inherently dependent on external pertubations. Such is that visible when seeing the autogen in its inert state. There’s a great concern about which should be the default state of an organism: a rather stable and inert state, or a more unstable one. The latter would usually be associated to systems which are continually (re)forming their boundary conditions or constraints. Such system would need to do it <em>from within</em>. It would need to generate pertubations from inside the system, without a reliance on external ones. The autogen as it is, doesn’t seem to have any control over its breakage.</p>
+
+<p>Such generation of internal pertubations should then be generated also as a by-product of the autocatalytic network. These internal pertubations would mostly affect the integrity of the capsid, thus rendering it semi-permeable. This could be done by bond-competition between the capsid aggregates and such disruptor molecules generated as by-products of the autocatalytic network. To prevent further issues related to a combinatorial catastrophe, one could wonder if such capsid and disruptor systems couldn’t be associated to conformers of the same molecule. If there was a way such that initially, when the system isn’t yet completely self-assembled or in the inert state, for the capsid conformation to be more likely, and as the system becomes more closed (given self-assembly) for the disruptor one to increase in likelihood, there would be a direct signal to the system’s unity that isn’t completely relying on the external environment. It is though, hard to put forward an explanation for the change of the ratio between the free energies of the two conformations, such that the previous description might be possible.</p>
+
+<p>Additionally to the autonomy problem put prior, one can wonder if the autogen as it is has enough variability allowed into it, as it seems to be relying only on the occasional enclosure of other molecules in the environment after the collapse and consequent formation of a new unit through self-assembly. Deacon’s autogen it would seem to me, could have a higher sensitivity. It is only “stress testing” the autocatalytic/self-assembly coupling indirectly, through what pertubations the capsid system can face, and very minimally directly. If there are internal pertubations, and inherently semi-permeability, the capacity for the system to maintain the autogenic constraint will be much more sensitive to selection. The system would now be selected much more strongly on the basis of which internal pertubations, and consequently external ones through semi-permeability, would allow optimal self-replication and self-repair rates. And more importantly, this would be <em>internally</em> imposed.</p>
+
+<h3 id="references">References</h3>
+
+<p><a name="ref-1"></a>
+[1] - Deacon, T. W. (2011). Incomplete nature: How mind emerged from matter. WW Norton &amp; Company.</p>
+
+<p><a name="ref-2"></a>
+[2] - Deacon, T. W. (2021). How molecules became signs. Biosemiotics, 14(3), 537-559.</p>
+
+<p><a name="ref-3"></a>
+[3] - García-Valdecasas, M., &amp; Deacon, T. W. (2024). Origins of biological teleology: how constraints represent ends. Synthese, 204(2), 75.</p>
+
+<p><a name="ref-4"></a>
+[4] - García-Valdecasas, M. (2022). On the naturalisation of teleology: self-organisation, autopoiesis and teleodynamics. Adaptive Behavior, 30(2), 103-117.</p>
+
+<p><a name="ref-5"></a>
+[5] - Kauffman, S. (2002). Investigations. Oxford University Press, USA.</p>
+
+<p><a name="ref-6"></a>
+[6] - Montévil, M., &amp; Mossio, M. (2015). Biological organisation as closure of constraints. Journal of theoretical biology, 372, 179-191.</p>
+
+<p><a name="ref-7"></a>
+[7] - Von Neumann, J., &amp; Burks, A. W. (1966). Theory of self-reproducing automata.</p>
+
+<p><a name="ref-8"></a>
+[8] - Pattee, H. H., &amp; Rączaszek-Leonardi, J. (2012). Laws, language and life: Howard Pattee’s classic papers on the physics of symbols with contemporary commentary (Vol. 7). Springer Science &amp; Business Media.</p>
+
+<p><a name="ref-9"></a>
+[9] - Rocha, L. M. (2001). Evolution with material symbol systems. Biosystems, 60(1-3), 95-121.</p>
+
+<p><a name="ref-10"></a>
+[10] - Dyson, F. (1999). Origins of life. Cambridge University Press.</p>
+
+<p><a name="ref-11"></a>
+[11] - Cornish-Bowden, A., &amp; Cárdenas, M. L. (2020). Contrasting theories of life: Historical context, current theories. In search of an ideal theory. Biosystems, 188, 104063.</p>
+
+<p><a name="ref-12"></a>
+[12] - Hofmeyer, J. (2015) Introduction: Semiotic scafolding. Biosemiotics 8 (2) 153–158 &amp; J. Hofmeyer (Ed.). Special issue. (pp. 159–360)</p>
+
+<p><a name="ref-13"></a>
+[13] - Favareau, D. (2021). Facing Up to the Hard Problem of Biosemiotics: A commentary on Terrence Deacon’s “How molecules became signs”. Biosemiotics, 14(3), 603-615.</p>
+
+<p><a name="ref-14"></a>
+[14] - Froese, T. (2021). To understand the origin of life we must first understand the role of normativity. Biosemiotics, 14(3), 657-663.</p>
+
+<p><a name="ref-15"></a>
+[15] - Deacon, T. W. (2023). Minimal Properties of a Natural Semiotic System: Response to Commentaries on “How Molecules Became Signs”. Biosemiotics, 16(1), 1-13.</p>
+
+<p><a href="https://gbragafibra.github.io">Back</a></p>
+
+    <footer>
+        <p>
+            <a href="https://x.com/FibraDomingos" target="_blank">x.com</a> | 
+            <a href="https://github.com/gbragafibra" target="_blank">GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>

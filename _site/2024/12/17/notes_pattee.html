@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@1.0.0/fonts/serif/cmunrm.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@1.0.0/fonts/serif/cmunrm.woff" as="font" type="font/woff" crossorigin="anonymous">
+
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript">
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], 
+                displayMath: [['$$', '$$'], ['\\[', '\\]']] 
+            }
+        };
+
+        window.addEventListener("load", function() {
+            MathJax.typeset();
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const footnotes = document.querySelectorAll('.footnote');
+            footnotes.forEach(footnote => {
+                footnote.addEventListener('mouseenter', () => {
+                    MathJax.typeset();
+                });
+            });
+        });
+    </script>
+
+    <style>
+    body {
+        font-family: 'CMU Serif', serif; 
+        font-size: 20px;
+        margin: 50px 15%;
+        line-height: 1.5;
+        background-color: #fff;
+        color: #000;
+        text-shadow: 0.00em 0.00em 0 currentColor;
+    }
+
+    h1 {
+        text-align: center; 
+        font-weight: bold;
+    }
+
+    footer {
+        text-align: center; 
+        margin-top: 20px;
+        font-size: 16px;
+    }
+    .footnote {
+        position: relative;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 1em;
+        vertical-align: super; 
+    }
+
+    .footnote:hover::after {
+        content: attr(data-footnote);
+        position: absolute;
+        top: 20px;
+        left: 0;
+        padding: 15px;
+        background-color: #333;
+        color: white;
+        border-radius: 5px;
+        font-size: 14px;
+        display: block;
+        white-space: normal;
+        width: 300px;
+        max-height: 30vh;
+        overflow: auto; 
+        z-index: 9999;
+        box-sizing: border-box;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    </style>
+</head>
+<body>
+    <h1>Notes on Pattee's "The physics of symbols: bridging the epistemic cut" and other things</h1>
+    <p>Lucretius once wondered in <a href="https://onlinebooks.library.upenn.edu/webbin/gutbook/lookup?num=785">“On the Nature of Things
+“</a> why organisms seem<span class="footnote" data-footnote="This is already 'loaded'. Particularly regarding what might be the best approach, that of teleonomy (it's as if organisms have goal-oriented behaviour), or that of teleology (organisms having goal-oriented behaviour), and specifically intrinsic teleology as Kant was preoccupied with. A good description of such can be found in [1], such that it is discussed in terms of the autopoietic approach.">1</span> to have goals, autonomy and agency, asserted by him as free will, if</p>
+<blockquote>
+  <p>[…] all movement is interconnected, the
+new arising from the old in a determinate order,
+if the atoms never swerve so as to originate
+some new movement that will snap the bonds
+of fate […]</p>
+</blockquote>
+
+<p>Afterall, is there a difference between the complexity seen in organisms and in other dynamical systems which aren’t organisms, and if there is what type of difference is it? A quantitative gradient-like one (even admitting critical transitions), or a categorical one altogether? The former was taken by John von Neumann [<a href="#ref-7">7</a>], and Robert Rosen argues in <a href="#ref-2">[2]</a> in a more historical account, and in [<a href="#ref-3">3</a>, <a href="#ref-4">4</a>] with more depth, for the latter<span class="footnote" data-footnote="It is worth mentioning that Rosen's thinking changed a bit from Anticipatory Systems (AS)[5] to Life Itself (LI), and Howard Pattee reflects on such differences in [6].">2</span>. And can one account for the complexity shown by organisms purely by physical law?</p>
+
+<h3 id="what-are-organisms">What are organisms?</h3>
+
+<p>Schrödinger’s “What is Life?” [<a href="#ref-8">8</a>] can be read in two ways: either as re-affirmation of the undeniable success of molecular biology and adjacent fields over the past and present centuries, or as an indication that something still lies underneath unresolved<span class="footnote" data-footnote="Perhaps this is too harsh a characterization, as it can be read both ways. Rosen approaches this in [4].">3</span>. That something has multiple ways to be stated: “When is a molecule a Mendelian gene?”, “How does a molecule become a message?” [<a href="#ref-9">9</a>]</p>
+
+<h3 id="references">References</h3>
+
+<p><a name="ref-1"></a>
+[1] - Weber, A., &amp; Varela, F. J. (2002). Life after Kant: Natural purposes and the autopoietic foundations of biological individuality. Phenomenology and the cognitive sciences, 1(2), 97-125.</p>
+
+<p><a name="ref-2"></a>
+[2] - Rosen, R. (1993). Bionics revisited. In The machine as metaphor and tool (pp. 87-100). Berlin, Heidelberg: Springer Berlin Heidelberg.</p>
+
+<p><a name="ref-3"></a>
+[3] - Rosen, R. (1991). Life itself: a comprehensive inquiry into the nature, origin, and fabrication of life. Columbia University Press.</p>
+
+<p><a name="ref-4"></a>
+[4] - Rosen, R. (2000). Essays on life itself. Columbia University Press.</p>
+
+<p><a name="ref-5"></a>
+[5] - Rosen, R. (2011). Anticipatory systems. In Anticipatory systems: Philosophical, mathematical, and methodological foundations (pp. 313-370). New York, NY: Springer New York.</p>
+
+<p><a name="ref-6"></a>
+[6] - Pattee, H. H. (2007). Laws, constraints, and the modeling relation–history and interpretations. Chemistry &amp; biodiversity, 4(10), 2272-2295.</p>
+
+<p><a name="ref-7"></a>
+[7] - Von Neumann, J., &amp; Burks, A. W. (1966). Theory of self-reproducing automata.</p>
+
+<p><a name="ref-8"></a>
+[8] - Schrodinger, E. (2012). What is life?: With mind and matter and autobiographical sketches. Cambridge university press.</p>
+
+<p><a name="ref-9"></a>
+[9] - Pattee, H. H., Rączaszek-Leonardi, J., &amp; Pattee, H. H. (2012). How does a molecule become a message?. LAWS, LANGUAGE and LIFE: Howard Pattee’s classic papers on the physics of symbols with contemporary commentary, 55-67.</p>
+
+<p><a href="https://gbragafibra.github.io">Back</a></p>
+
+    <footer>
+        <p>
+            <a href="https://x.com/FibraDomingos" target="_blank">x.com</a> | 
+            <a href="https://github.com/gbragafibra" target="_blank">GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>

@@ -20,6 +20,16 @@
             MathJax.typeset();
         });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const footnotes = document.querySelectorAll('.footnote');
+            footnotes.forEach(footnote => {
+                footnote.addEventListener('mouseenter', () => {
+                    MathJax.typeset();
+                });
+            });
+        });
+    </script>
 
     <style>
     body {
@@ -42,6 +52,34 @@
         margin-top: 20px;
         font-size: 16px;
     }
+    .footnote {
+        position: relative;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 1em;
+        vertical-align: super; 
+    }
+
+    .footnote:hover::after {
+        content: attr(data-footnote);
+        position: absolute;
+        top: 20px;
+        left: 0;
+        padding: 15px;
+        background-color: #333;
+        color: white;
+        border-radius: 5px;
+        font-size: 14px;
+        display: block;
+        white-space: normal;
+        width: 300px;
+        max-height: 30vh;
+        overflow: auto; 
+        z-index: 9999;
+        box-sizing: border-box;
+        left: 50%;
+        transform: translateX(-50%);
+    }
     </style>
 </head>
 <body>
@@ -50,7 +88,9 @@
 <h2>Posts</h2>
 <ul>
     
-        <li><a href="/2024/12/17/notes_pattee.html">Notes on Pattee's 'The physics of symbols: bridging the epistemic cut' and other things</a></li>
+        <li><a href="/2024/12/19/autogen_notes.html">A few notes on Deacon's autogen</a></li>
+    
+        <li><a href="/2024/12/17/notes_pattee.html">Notes on Pattee's "The physics of symbols: bridging the epistemic cut" and other things</a></li>
     
         <li><a href="/2024/10/08/autopoietic_nets.html">Autopoietic Networks</a></li>
     
