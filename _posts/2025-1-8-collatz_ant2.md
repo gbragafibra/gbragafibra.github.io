@@ -6,7 +6,7 @@ date: 2025-01-08
 
 This is a brief continuation of a previous [post](https://gbragafibra.github.io/2024/12/21/collatz_ant.html) ([Repo](https://github.com/gbragafibra/collatz-ant)), which introduced such visualization for collatz sequences based on [Langton's Ant](https://en.wikipedia.org/wiki/Langton%27s_ant).
 
-Collat'z Ant is based on the [collatz function](https://en.wikipedia.org/wiki/Collatz_conjecture):
+Collatz's Ant is based on the [collatz function](https://en.wikipedia.org/wiki/Collatz_conjecture):
 
 $$
 f(n) = \begin{cases}
