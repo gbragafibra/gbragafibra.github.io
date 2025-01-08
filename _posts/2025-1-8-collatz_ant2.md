@@ -53,6 +53,8 @@ From $n = 10^{200}$ to $n = 10^{200} + 20$.
 
 - Very similar landscapes have the same stopping time (or similar ones)<span class="footnote" data-footnote="Due to converging to the same sub-trajectory.">3</span>, but the inverse isn't true. An example of the inverse not being true, is present in [this comparison between](#ref-1) $n = 10^{20} + 1$ (1st row, 2nd col) and $n = 10^{20} + 16$ (4th row, 2nd col), both with stopping times 532.
 
+If we check the similarity between both of these trajectories:
+
 ```python
 import numpy as np
 import mpmath
