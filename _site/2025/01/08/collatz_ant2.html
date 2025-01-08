@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@1.0.0/fonts/serif/cmunrm.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@1.0.0/fonts/serif/cmunrm.woff" as="font" type="font/woff" crossorigin="anonymous">
+
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript">
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], 
+                displayMath: [['$$', '$$'], ['\\[', '\\]']] 
+            }
+        };
+
+        window.addEventListener("load", function() {
+            MathJax.typeset();
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const footnotes = document.querySelectorAll('.footnote');
+            footnotes.forEach(footnote => {
+                footnote.addEventListener('mouseenter', () => {
+                    MathJax.typeset();
+                });
+            });
+        });
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            Prism.highlightAll();
+        });
+    </script>
+
+
+    <style>
+    body {
+        font-family: 'CMU Serif', serif; 
+        font-size: 20px;
+        margin: 50px 15%;
+        line-height: 1.5;
+        background-color: #fff;
+        color: #000;
+        text-shadow: 0.00em 0.00em 0 currentColor;
+    }
+
+    h1 {
+        text-align: center; 
+        font-weight: bold;
+    }
+
+    footer {
+        text-align: center; 
+        margin-top: 20px;
+        font-size: 16px;
+    }
+    .footnote {
+        position: relative;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 1em;
+        vertical-align: super; 
+    }
+
+    .footnote:hover::after {
+        content: attr(data-footnote);
+        position: absolute;
+        top: 20px;
+        left: 0;
+        padding: 15px;
+        background-color: #333;
+        color: white;
+        border-radius: 5px;
+        font-size: 14px;
+        display: block;
+        white-space: normal;
+        width: 300px;
+        max-height: 30vh;
+        overflow: auto; 
+        z-index: 9999;
+        box-sizing: border-box;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    pre {
+        background-color: #f5f5f5;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    code {
+        font-family: 'Courier New', Courier, monospace;
+    }
+    </style>
+</head>
+<body>
+    <h1>Collatz's Ant and similarity of collatz sequences</h1>
+    <p>This is a brief continuation of a previous <a href="https://gbragafibra.github.io/2024/12/21/collatz_ant.html">post</a> (<a href="https://github.com/gbragafibra/collatz-ant">Repo</a>), which introduced such visualization for collatz sequences based on <a href="https://en.wikipedia.org/wiki/Langton%27s_ant">Langton’s Ant</a>.</p>
+
+<p>Collat’z Ant is based on the <a href="https://en.wikipedia.org/wiki/Collatz_conjecture">collatz function</a>:</p>
+
+\[f(n) = \begin{cases}
+n/2 &amp; \text{if} \quad n \equiv 0 \quad (\text{mod}\, 2) \\
+3n + 1 &amp; \text{if} \quad n \equiv 1 \quad (\text{mod}\, 2) \\
+\end{cases}\]
+
+<p>and additionally, if $n \equiv 0 \, (\text{mod}\, 2)$ the ant turns 90º clockwise, else the ant turns 90º counter-clockwise. On both accounts, the state of the cell is flipped and the ant moves forward one unit. This is repeated until $n = 1$. An example of such is present in the following animation:</p>
+
+<p><img src="/gifs/collatz_ant1.gif" alt="" /></p>
+
+<p>Example of consecutive trajectories from $n = 10^{40}$ to $n = 10^{40} + 20$.</p>
+
+<p><img src="/gifs/collatz_ant40.gif" alt="" /></p>
+
+<p>And although this representation is interesting, the flipping of state can eventually lead to ambiguous scenarios<span class="footnote" data-footnote="Although this particular case isn't an example of that.">1</span> where trajectories seem similar to each other through omission.</p>
+
+<p>Given that, the following picture corresponds to the ant’s landscape (final snapshot) without state flipping for the same trajectories, along with respective stopping times. This is done by merely adding a $+1$ count to each coordinate the ant has been through<span class="footnote" data-footnote="The color scheme intensity is relative to the stopping time of each corresponding trajectory.">2</span>.</p>
+
+<p><img src="/gifs/collatz_ant_attractor40.png" alt="" /></p>
+
+<h3 id="some-other-examples">Some other examples</h3>
+
+<p>The first 100 numbers from $n = 2$ to $n = 102$.</p>
+
+<p><img src="/gifs/collatz_ant_attractor2-102.png" alt="" /></p>
+
+<p>From $n = 10^{9}$ to $n = 10^{9} + 100$.</p>
+
+<p><img src="/gifs/collatz_ant_attractor9.png" alt="" /></p>
+
+<p>From $n = 10^{20}$ to $n = 10^{20} + 100$.
+<a name="ref-1"></a></p>
+
+<p><img src="/gifs/collatz_ant_attractor20.png" alt="" /></p>
+
+<p>From $n = 10^{200}$ to $n = 10^{200} + 20$.</p>
+
+<p><img src="/gifs/collatz_ant_attractor200.png" alt="" /></p>
+
+<h3 id="some-interesting-things">Some interesting things</h3>
+
+<ul>
+  <li>Very similar landscapes have the same stopping time (or similar ones)<span class="footnote" data-footnote="Due to converging to the same sub-trajectory.">3</span>, but the inverse isn’t true. An example of the inverse not being true, is present in <a href="#ref-1">this comparison between</a> $n = 10^{20} + 1$ (1st row, 2nd col) and $n = 10^{20} + 16$ (4th row, 2nd col), both with stopping times 532.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">mpmath</span>
+
+<span class="k">def</span> <span class="nf">collatz_seq</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">seq</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">seq</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        	<span class="n">n</span> <span class="o">/=</span> <span class="mi">2</span>
+        <span class="k">else</span><span class="p">:</span>
+        	<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">seq</span>
+
+<span class="n">mpmath</span><span class="p">.</span><span class="n">mp</span><span class="p">.</span><span class="n">dps</span> <span class="o">=</span> <span class="mi">22</span>
+<span class="n">n1</span> <span class="o">=</span> <span class="n">mpmath</span><span class="p">.</span><span class="n">mpf</span><span class="p">(</span><span class="s">"1e20"</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="n">mpmath</span><span class="p">.</span><span class="n">mpf</span><span class="p">(</span><span class="s">"1e20"</span><span class="p">)</span> <span class="o">+</span> <span class="mi">16</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">intersect1d</span><span class="p">(</span><span class="n">collatz_seq</span><span class="p">(</span><span class="n">n1</span><span class="p">),</span> <span class="n">collatz_seq</span><span class="p">(</span><span class="n">n2</span><span class="p">)))</span>
+</code></pre></div></div>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Output: 142
+</code></pre></div></div>
+<p>If the same is done between $n = 10^{20} + 16$ and $n = 10^{20} + 20$, which have similar landscapes and the same stopping time, we get:</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Output: 527
+</code></pre></div></div>
+
+<ul>
+  <li>Furthermore, if we now look at an example of sub-trajectories converging, in this case with a difference of 5 steps between each, we can see that the landscapes are pretty similar to each other, but for the rotation (which seems to overall be of 90º)<span class="footnote" data-footnote="Or any combination of direction changes in those 5 extra steps which adds to such angle.">3</span>. This is of course the product of the early re-orientation of the ant given those 5 extra steps.</li>
+</ul>
+
+<p>Example with $n = 18750000000000000004$ and $n = 10^{20} + 16$, the former being found after 5 reduction steps of the latter.</p>
+
+<p><img src="/gifs/collatz_ant_attractor_rotation.png" alt="" /></p>
+
+<p>Now with a difference of 100 steps, the landscapes still seem very similar but for a rotation of 180º.</p>
+
+<p><img src="/gifs/collatz_ant_attractor_rotation100.png" alt="" /></p>
+
+<p>With a difference of 200 steps, the landscapes start losing some detail relative to each other.</p>
+
+<p><img src="/gifs/collatz_ant_attractor_rotation200.png" alt="" /></p>
+
+<p>And with 300 steps, only a few larger-scale characteristics are now common between the two landscapes.</p>
+
+<p><img src="/gifs/collatz_ant_attractor_rotation300.png" alt="" /></p>
+
+<p><a href="https://gbragafibra.github.io">Back</a></p>
+
+    <footer>
+        <p>
+            <a href="https://x.com/FibraDomingos" target="_blank">x.com</a> | 
+            <a href="https://github.com/gbragafibra" target="_blank">GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>
