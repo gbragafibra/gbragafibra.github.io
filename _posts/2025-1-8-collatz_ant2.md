@@ -45,7 +45,7 @@ From $n = 10^{20}$ to $n = 10^{20} + 100$.
 
 ![](/gifs/collatz_ant_attractor20.png)
 
-From $n = 10^{200}$ to $n = 10^{200} + 20$.
+From $n = 10^{200}$ to $n = 10^{200} + 10$.
 
 ![](/gifs/collatz_ant_attractor200.png)
 
