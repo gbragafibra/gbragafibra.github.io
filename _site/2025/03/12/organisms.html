@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@1.0.0/fonts/serif/cmunrm.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@1.0.0/fonts/serif/cmunrm.woff" as="font" type="font/woff" crossorigin="anonymous">
+
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript">
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], 
+                displayMath: [['$$', '$$'], ['\\[', '\\]']] 
+            }
+        };
+
+        window.addEventListener("load", function() {
+            MathJax.typeset();
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const footnotes = document.querySelectorAll('.footnote');
+            footnotes.forEach(footnote => {
+                footnote.addEventListener('mouseenter', () => {
+                    MathJax.typeset();
+                });
+            });
+        });
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            Prism.highlightAll();
+        });
+    </script>
+
+
+    <style>
+    body {
+        font-family: 'CMU Serif', serif; 
+        font-size: 20px;
+        margin: 50px 15%;
+        line-height: 1.5;
+        background-color: #fff;
+        color: #000;
+        text-shadow: 0.00em 0.00em 0 currentColor;
+    }
+
+    h1 {
+        text-align: center; 
+        font-weight: bold;
+    }
+
+    footer {
+        text-align: center; 
+        margin-top: 20px;
+        font-size: 16px;
+    }
+    .footnote {
+        position: relative;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 1em;
+        vertical-align: super; 
+    }
+
+    .footnote:hover::after {
+        content: attr(data-footnote);
+        position: absolute;
+        top: 20px;
+        left: 0;
+        padding: 15px;
+        background-color: #333;
+        color: white;
+        border-radius: 5px;
+        font-size: 14px;
+        display: block;
+        white-space: normal;
+        width: 300px;
+        max-height: 30vh;
+        overflow: auto; 
+        z-index: 9999;
+        box-sizing: border-box;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    pre {
+        background-color: #f5f5f5;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    code {
+        font-family: 'Courier New', Courier, monospace;
+    }
+    </style>
+</head>
+<body>
+    <h1>What are (and aren't) organisms!?</h1>
+    <hr />
+
+<p>Some remarks on trying to contexualize Howard Pattee’s work, which falls under the label of physical biosemiotics, with Robert Rosen’s which can be broadly put under the label of relational biology. As I hope it will be perceptible over this discussion, both approaches have large intersections with respect to eachother, and have some offspring niche fields today. The former emphasizes organisms as having symbolic controls over matter, having syntactic and semantic relations contextualized with respect to the autonomous system (the organism), and highlighting the epistemological limitations always present with these. The latter emphasizes that what makes organisms different from other physical systems is their organization (putting it as a categorical difference in terms of complexity, in contrast to a mere quantitative gradient-like one), as is aswell common in organizational approaches in biology, which take the same idea into account. These stress that the weight is on the relations between the constraints of a system, and not necessarily on the constraints themselves. Majority of these approaches point to the necessity of a system to regenerate the constraints which make it self-organizing, from within its own organization, for such system to be classified as autonomous. Afterall, from the infinitude of dynamical systems that we find in Nature which have some self-organizing capacity, only a few don’t dissipate away and actually maintain such capacity. Only a few can be said to be constituted by coupled self-organizing processes which compensate for eachother’s dissipative tendencies. These systems are organisms.</p>
+
+<p>Overall, this is mostly a discussion to try to sort out some confusion in my head about these themes.</p>
+
+<hr />
+
+<h4 id="contents">Contents</h4>
+
+<ul>
+  <li><a href="#cont-1">On autonomy</a></li>
+  <li><a href="#cont-2">What are symbols, and what are they for?</a>
+    <ul>
+      <li><a href="#cont-3">von Neumann’s universal constructor and the necessity of rate-independent constraints</a></li>
+    </ul>
+  </li>
+  <li><a href="#cont-ref">References</a></li>
+</ul>
+
+<hr />
+
+<p><a name="cont-1"></a></p>
+<h3 id="on-autonomy">On autonomy</h3>
+
+<p>It is often said that organisms perceive a certain part of their environment, what is called the organism’s umwelt <a href="#ref-1">[1]</a>. In a sense, what organisms perceive of the world is a reflection of their constraints. What is frequently left underexplained (if not at times unexplained) is which should be the general characteristics of organisms that differentiate them from other physical systems, and what (and what for) is “perceive” as referred previously.</p>
+
+<p>Some approaches assert that organisms are different from other physical systems based on their organization, which can seen roughly as the collection of the constraints on a system and relations between these. Very generally, a constraint is physical object which reduces the degrees of freedom of a system (CONTINUE HERE, check kept Pattee papers for notions of what a constraint is, also reference Mossio, Moreno, etc). Majority of this discussion will be centered around such organizational approaches. Through such views, organisms are taken as far-from-equilibrium systems which must continually do work in a constrained manner in order for a particular set of constraints to be produced. This “particular” set of constraints is not meant as being overdetermined, and in fact, is often underdetermined, as I hope it will be clear over this discussion. The set of constraints which needs to be produced is the one that allows the system to continually manufacture itself. We are not talking about permanence of the material aspects of the system, which we might associate to physical structure, nor are we talking about keeping the relations between these components the same over time. Quite the opposite. For there to be organizational closure, often some relations between said components need to change.</p>
+
+<ul>
+  <li>Keep talking about (biological) organization</li>
+  <li>Start going toward Rosen’s; Hofmeyr’s as sub-sections
+    <ul>
+      <li>Also introducing Aristotilean causes</li>
+    </ul>
+  </li>
+</ul>
+
+<p><a name="cont-2"></a></p>
+<h3 id="what-are-symbols-and-what-are-they-for">What are symbols, and what are they for?</h3>
+
+<p><a name="cont-3"></a></p>
+<h4 id="von-neumanns-universal-constructor-and-the-necessity-of-rate-independent-constraints">von Neumann’s universal constructor and the necessity of rate-independent constraints</h4>
+
+<hr />
+
+<h3 id="plan">Plan</h3>
+
+<ul>
+  <li>Need to write about:
+    <ul>
+      <li>Autonomy / Biological organization
+        <ul>
+          <li>Referring to organizational approaches (Montévil, Moreno, etc)</li>
+          <li>Rosen’s (M, R)-systems; Hofmeyr’s (F, A)-systems</li>
+          <li>A bit of philosophy of biology (Hans Jonas, etc)</li>
+          <li>Mention the importance of teleology (namely, intrinsic teleology as per Kant) as opposed to heuristic principles of end-directedness (i.e. teleonomy), as an organism is both the means and the end.</li>
+        </ul>
+      </li>
+      <li>Pattee’s physical biosemiotics (what is a symbol, syntax, semantics) relative to an autonomous system</li>
+      <li>Cariani’s development of Pattee’s work
+        <ul>
+          <li>What should measurement/computation/control be seen as</li>
+        </ul>
+      </li>
+      <li>Fundamental epistemological problems of modelling these</li>
+      <li>Relate these to Aristotilean causes
+        <ul>
+          <li>Through Hofmeyr’s work</li>
+          <li>Relating it to Deacon’s autogen</li>
+          <li>What formal causation perhaps should be seen as (no intrinsic formal causes, as Hofmeyr puts it)</li>
+          <li>Formal causation should it be defined to refer representation, description, etc of something, then the physical object which formally causes something else, is the symbol vehicle, and that something else is what it refers to. In this sense, formal cause should only be applied between a rate-dependent and a rate-independent process. Where do types come from? Where categories come from? Surely, some much simpler form of this, is already present at the level of the simplest organism?</li>
+          <li>Try to map Deacon’s autogen to (F, A)-systems, but with this different notion of formal causation, and try to relate this to the notions of measurement/computation/control.</li>
+        </ul>
+      </li>
+      <li>Talk about Deacon’s autogen, its usefulness as a toy model</li>
+      <li>Some relation to von Neumann’s universal constructor (going off of Hofmeyr 2018)
+        <ul>
+          <li>More specifically, if the paradox in von Neumann’s universal constructor that Rosen found, pertaining to impredicativity can be solved in a different manner. If there are problems with impredicativity, then the physical instantiation analogue is precisely about asking: how can there be any variation of dynamical (rate-independent) constraints without we going into a molecular combinatorial catastrophe? The answer is formal cause, but not as Hofmeyer 2018 says. Rather formal cause should be seen as representation, description, of something, in essence being a rate-independent constraint, a symbol vehicle, which refers to something else. A physical object can’t be both a symbol vehicle and what it refers to at the same time. As such, intrinsic formal cause is dubious.</li>
+        </ul>
+      </li>
+      <li>Some words about the limitations of artificial systems with only adaptive syntax</li>
+      <li>Formalism alone can’t go beyond pre-stated state variables (fixed semantics)</li>
+      <li>What is a general theory of autonomous systems with both adaptive syntax and adaptive semantics</li>
+      <li>What to make out of symbol-grounding/relevance realization (how should the notions of measurement/computation/control) be seen through this</li>
+      <li>Measurement should be a biosemiotic concept
+        <ul>
+          <li>In the same way we talk about a measuring device (that we built) to capture a certain part of the world (capturing the state variables that we want) and acting as a dissipative constraint (thermodynamics of computation, physics of information, Brillouin, Landaeur, Bennett, etc)</li>
+          <li>Such measuring device can absolutely be part of an autonomous system itself (organism) and as part of its organization, as in contrast to being a mere extension of such autonomous system (us). How do we talk about a thermodynamic account through this lens? What is to be said of energetic costs of measurement/computation/control?</li>
+        </ul>
+      </li>
+      <li>Genotype/phenotype, symbol/matter, mind/body, etc, are all problems that stem from contexualizing rate-independent with rate-dependent constraints (of course wrt to an autonomous system for which the notion of a set of rate-independent constraints and what they refer to as a code, is appropriate).</li>
+      <li>We are inherently part of what we are trying to describe. Knowledge acquisition is a form of relevance realization. All our knowledge is neither objective nor subjective, but transjective. It depends on our cut on the world (pleroma).</li>
+      <li>Possible referral to Pattee’s paper about how Rosen’s thinking changed from AS to LI. Interesting things about the modelling relation (which are also present in Cariani’s thesis), as introduced by Hertz. Modelling relation instantiated physically? All notions of measurement/computation/control can be put in this.</li>
+      <li>There needs to be a bridge between all of these approaches.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><a name="cont-ref"></a></p>
+<h4 id="references">References</h4>
+
+<p><a name="ref-1"></a>
+[1] - Von Uexküll, J. (1909). Umwelt und innenwelt der tiere. Springer.</p>
+
+<p><a href="https://gbragafibra.github.io">Back</a></p>
+
+    <footer>
+        <p>
+            <a href="https://x.com/FibraDomingos" target="_blank">x.com</a> | 
+            <a href="https://github.com/gbragafibra" target="_blank">GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>
