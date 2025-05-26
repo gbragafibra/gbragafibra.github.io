@@ -1,21 +1,63 @@
-<p>A type of cellular automaton based on the concept of <a href="https://en.wikipedia.org/wiki/Autopoiesis">autopoiesis</a> is explored, as introduced by <a href="https://en.wikipedia.org/wiki/Humberto_Maturana">Maturana</a> and <a href="https://en.wikipedia.org/wiki/Francisco_Varela">Varela</a> in <a href="https://doi.org/10.1007/978-94-009-8947-4">Autopoiesis and Cognition: The Realization of the Living</a>, and also a bit developed on in Principles of biological autonomy(1979) by Varela.</p>
+<p>A type of cellular automaton with the intent of simulating <a href="https://en.wikipedia.org/wiki/Autopoiesis">autopoiesis</a> in an emergent manner, with a simple scaling rule and with each unit having binary state attribution and a corresponding gate associated to it. Such concept of autopoiesis is as introduced by <a href="https://en.wikipedia.org/wiki/Humberto_Maturana">Maturana</a> and <a href="https://en.wikipedia.org/wiki/Francisco_Varela">Varela</a> in <a href="https://doi.org/10.1007/978-94-009-8947-4">Autopoiesis and Cognition: The Realization of the Living</a>, and also a bit developed in Principles of biological autonomy(1979) by Varela.</p>
 
-<p>Autopoiesis can be viewed as the capacity of an organism to maintain <a href="https://doi.org/10.1016/j.jtbi.2015.02.029">organizational closure</a> or closure of constraints. These very briefly mean that any process (and respective constraints on it) needs to generate atleast another constraint. Here, processes and relations between them evolve in order to maintain such closure. Through this lens, any new adaptation or behaviour taken by an organism can be seen as a compensation to a pertubation (i.e. self-replication).</p>
+<p>Autopoiesis can be viewed as the capacity of a system to generate and (re)build itself. Associated to this concept of autopoiesis is that of <a href="https://doi.org/10.1016/j.jtbi.2015.02.029">organizational closure</a> or closure of constraints. These very briefly mean that any process (and respective constraints on it) needs to generate atleast another constraint. Here, processes and relations between them evolve in order to maintain such closure. Through this lens, any new adaptation or behaviour taken by an organism can be seen as a compensation to a pertubation (e.g. self-replication).</p>
+
+<p>Alternatively to this emergent approach, some examples might be those of <a href="https://doi.org/10.1016/0303-2647(74)90031-8">Varela’s model for the simulation of autopoiesis</a>, <a href="https://pure.hva.nl/ws/portalfiles/portal/1564681/Deacon_Exploring_Constraint.pdf">Terrence Deacon’s simulation for his autogen</a>, and more generally approaches which employ object calculi, for example using λ-calculus, <a href="https://scholar.harvard.edu/files/walterfontana/files/arrival.pdf">Fontana’s &amp; Buss’ abstract chemistry(although not directly applied to autopoiesis)</a> being an example of that.</p>
 
 <h3 id="details-of-the-network">Details of the network</h3>
 
 <p><a href="https://github.com/gbragafibra/autopoietic-nets">Code and examples</a></p>
 
-<p>A network with <code class="language-plaintext highlighter-rouge">N x N</code> units is initialized, with each unit’s state $∈ { 0, 1 }$ being randomly assigned. Over each iteration (with a max of <code class="language-plaintext highlighter-rouge">N_iter</code>), there’s a logic gate randomly chosen (global, that is, for all units) from a set (examples with <code class="language-plaintext highlighter-rouge">AND</code>, <code class="language-plaintext highlighter-rouge">OR</code> and <code class="language-plaintext highlighter-rouge">XOR</code>), for the update of each unit’s state according to its neighbors’ states (<code class="language-plaintext highlighter-rouge">extended</code> option to also include neighbors in the diagonals).</p>
+<p>A network with <code class="language-plaintext highlighter-rouge">N x N</code> units is initialized, with each unit’s state $∈ {0, 1}$ being randomly assigned. Over each iteration (with a max of <code class="language-plaintext highlighter-rouge">N_iter</code>), there’s a logic gate randomly chosen from a set (examples with <code class="language-plaintext highlighter-rouge">AND</code>, <code class="language-plaintext highlighter-rouge">OR</code> and <code class="language-plaintext highlighter-rouge">XOR</code>), for the update of each unit’s state according to its neighbors’ states.</p>
 
-<p>If a unit maintains its state after an iteration, regardless of its neighbors, its $\Phi$ value (which is supposed to mimick closure) increases by 1. Moreover, if the states respective to consecutive iterations are different, $\Phi$ is reset to 0. If $\Phi \geq \epsilon$, then the neighbors take the value of the main unit’s state, and an ensemble is formed. With regard to this, $\epsilon$ can be fixed (<code class="language-plaintext highlighter-rouge">fix = True</code>) or evolve over time (<code class="language-plaintext highlighter-rouge">fix = False</code>) with</p>
+<p>If a unit maintains its state after an iteration, regardless of its neighbors, its $\Phi$ value (which is supposed to mimick closure) increases by 1. Moreover, if the states respective to consecutive iterations are different, $\Phi$ is reset to 0. If $\Phi \geq \epsilon$, then the neighbors take the value of the main unit’s state, and an ensemble is formed. With regard to this, $\epsilon$ can be fixed (<code class="language-plaintext highlighter-rouge">fix = True</code>) or evolve over time (<code class="language-plaintext highlighter-rouge">fix = False</code>) with $ε = \textrm{int}\left(\frac{\textrm{iter}(1 - \textrm{H}(S))}{k}\right)$, where $\textrm{iter}$ is the number of iterations chosen, $\textrm{H}(S)$ the entropy of the net, and $k$ being an assigned integer. Additionally, there are two other options: <code class="language-plaintext highlighter-rouge">geq_cond = True</code> for $\Phi \geq \epsilon$ and <code class="language-plaintext highlighter-rouge">geq_cond = False</code> for $\Phi = \epsilon$.</p>
 
-\[ε = \textrm{int}\left(\frac{\textrm{iter}(1 - \textrm{H}(S))}{k}\right)\]
+<p>There are multiple variants, such that <a href="https://github.com/gbragafibra/autopoietic-nets/blob/main/main2.py">main2.py</a> generates the most interesting behaviour, it being applied with an euclidean neighborhood.</p>
 
-<p>where $\textrm{iter}$ is the number of iterations chosen, $\textrm{H}(S)$ the entropy of the net, and $k$ being an assigned integer. Additionally, there are two other options: <code class="language-plaintext highlighter-rouge">geq_cond = True</code> for $\Phi \geq \epsilon$ and <code class="language-plaintext highlighter-rouge">geq_cond = False</code> for $\Phi = \epsilon$.</p>
+<h3 id="interesting-behaviour-some-examples">Interesting behaviour (some examples)</h3>
 
-<h3 id="some-results">Some results</h3>
+<p>It is worth noting that the aim is to get behaviour increasingly closer to being characterized as autopoietic, and that these examples are far from such.</p>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Az061cv_s7A" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<p><img src="/gifs/c1.gif" alt="" /></p>
+
+<p><img src="/gifs/c2.gif" alt="" /></p>
+
+<p><img src="/gifs/c3.gif" alt="" /></p>
+
+<p><img src="/gifs/c4.gif" alt="" /></p>
+
+<p><img src="/gifs/c5.gif" alt="" /></p>
+
+<p><img src="/gifs/c6.gif" alt="" /></p>
+
+<p><img src="/gifs/c7.gif" alt="" /></p>
+
+<p><img src="/gifs/c8.gif" alt="" /></p>
+
+<p><img src="/gifs/c9.gif" alt="" /></p>
+
+<p><img src="/gifs/c10.gif" alt="" /></p>
+
+<p><img src="/gifs/c11.gif" alt="" /></p>
+
+<p><img src="/gifs/c12.gif" alt="" /></p>
+
+<p><img src="/gifs/c13.gif" alt="" /></p>
+
+<p><img src="/gifs/c14.gif" alt="" /></p>
+
+<p><img src="/gifs/c15.gif" alt="" /></p>
+
+<p><img src="/gifs/c16.gif" alt="" /></p>
+
+<p><img src="/gifs/c17.gif" alt="" /></p>
+
+<p><img src="/gifs/c18.gif" alt="" /></p>
+
+<p><img src="/gifs/c19.gif" alt="" /></p>
+
+<p><img src="/gifs/c20.gif" alt="" /></p>
+
+<p><img src="/gifs/c21.gif" alt="" /></p>
 
 <p><a href="https://gbragafibra.github.io">Back</a></p>
