@@ -1,110 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@1.0.0/fonts/serif/cmunrm.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@1.0.0/fonts/serif/cmunrm.woff" as="font" type="font/woff" crossorigin="anonymous">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script type="text/javascript">
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']], 
-                displayMath: [['$$', '$$'], ['\\[', '\\]']] 
-            }
-        };
+  <title>What are (and aren't) organisms!?</title>
 
-        window.addEventListener("load", function() {
-            MathJax.typeset();
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const footnotes = document.querySelectorAll('.footnote');
-            footnotes.forEach(footnote => {
-                footnote.addEventListener('mouseenter', () => {
-                    MathJax.typeset();
-                });
-            });
-        });
-    </script>
-    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@1.0.0/fonts.css" rel="stylesheet" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js" defer></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            Prism.highlightAll();
-        });
-    </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      "HTML-CSS": {
+        availableFonts: ["TeX"],
+        linebreaks: { automatic: true }
+      },
+      showProcessingMessages: false,
+      messageStyle: "none"
+    });
+  </script>
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS_HTML"></script>
 
-
-    <style>
+  <style>
     body {
-        font-family: 'CMU Serif', serif; 
-        font-size: 20px;
-        margin: 50px 15%;
-        line-height: 1.5;
-        background-color: #fff;
-        color: #000;
-        text-shadow: 0.00em 0.00em 0 currentColor;
+      font-family: 'CMU Serif', serif;
+      font-size: 18px;
+      line-height: 1.65;
+      color: #111;
+      background-color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 80px auto 120px auto;
+      padding: 0 1.5rem;
+      text-align: justify;
     }
 
     h1 {
-        text-align: center; 
-        font-weight: bold;
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: normal;
+    }
+
+    h2, h3, h4 {
+      font-weight: bold;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+    }
+
+    sup {
+      font-size: 0.75em;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    pre, code {
+      font-family: 'Courier New', Courier, monospace;
+      background: #f6f6f6;
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-size: 90%;
+    }
+
+    pre {
+      padding: 1em;
+      overflow-x: auto;
+    }
+
+    blockquote {
+      border-left: 3px solid #ccc;
+      margin-left: 0;
+      padding-left: 1em;
+      color: #555;
+      font-style: italic;
+    }
+
+    /* Footnotes in the margin */
+    .footnote-container {
+      position: relative;
+    }
+
+    .footnote-ref {
+      counter-increment: footnote;
+      font-size: 0.75em;
+      vertical-align: super;
+    }
+
+    .footnote-ref::after {
+      content: counter(footnote);
+    }
+
+    .footnote {
+      position: absolute;
+      right: -20em;
+      width: 16em;
+      font-size: 0.75em;
+      line-height: 1.4;
+      color: #444;
+      background: #f9f9f9;
+      padding: 0.5em 0.8em;
+      border-left: 2px solid #ccc;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+      margin-top: -1.4em; /* Aligns with baseline */
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      margin: 1.5em auto;
     }
 
     footer {
-        text-align: center; 
-        margin-top: 20px;
-        font-size: 16px;
-    }
-    .footnote {
-        position: relative;
-        cursor: pointer;
-        text-decoration: none;
-        font-size: 1em;
-        vertical-align: super; 
+      text-align: center;
+      font-size: 14px;
+      margin-top: 4em;
+      color: #666;
     }
 
-    .footnote:hover::after {
-        content: attr(data-footnote);
-        position: absolute;
-        top: 20px;
-        left: 0;
-        padding: 15px;
-        background-color: #333;
-        color: white;
-        border-radius: 5px;
-        font-size: 14px;
+    @media (max-width: 1000px) {
+      .footnote {
+        position: static;
+        margin-top: 1em;
+        margin-left: 1em;
+        border-left: none;
+        box-shadow: none;
+        background: none;
+        padding: 0;
+        width: auto;
+      }
+
+      .footnote-container {
         display: block;
-        white-space: normal;
-        width: 300px;
-        max-height: 30vh;
-        overflow: auto; 
-        z-index: 9999;
-        box-sizing: border-box;
-        left: 50%;
-        transform: translateX(-50%);
+      }
     }
-    pre {
-        background-color: #f5f5f5;
-        padding: 10px;
-        border-radius: 5px;
-    }
-
-    code {
-        font-family: 'Courier New', Courier, monospace;
-    }
-    </style>
+body {
+  counter-reset: footnote;
+}
+  </style>
 </head>
+
 <body>
+  <main>
     <h1>What are (and aren't) organisms!?</h1>
-    <hr />
+    <p>Most of this can probably be found in a better manner <a href="https://gbragafibra.github.io/notes/organizational_closure_remarks.pdf">here</a>. Unsure if majority of these concepts actually provide enough (if any, in some cases) value.</p>
+
+<hr />
 
 <p>It is often said that organisms perceive a certain part of their environment, what is called the organism’s umwelt. In a sense, what organisms perceive of the world is a reflection of their constraints. What is frequently left underexplained (if not at times unexplained) is which general characteristics differentiate organisms from other physical systems, and what (and what for) is “perceive” as referred previously.</p>
 
@@ -1114,11 +1175,13 @@ biological teleology is a constrained range of conditions, not any one individua
 
 <p><a href="https://gbragafibra.github.io">Back</a></p>
 
-    <footer>
-        <p>
-            <a href="https://x.com/FibraDomingos" target="_blank">x.com</a> | 
-            <a href="https://github.com/gbragafibra" target="_blank">GitHub</a>
-        </p>
-    </footer>
+  </main>
+
+  <footer>
+    <p>
+      <a href="https://x.com/FibraDomingos" target="_blank">Twitter/X</a> |
+      <a href="https://github.com/gbragafibra" target="_blank">GitHub</a>
+    </p>
+  </footer>
 </body>
 </html>
