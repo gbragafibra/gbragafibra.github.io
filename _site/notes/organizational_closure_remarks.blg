@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: organizational_closure_remarks.aux
+The style file: apalike.bst
+Database file #1: closure_refs.bib
+Warning--empty journal in hofmeyr2017basic
+Warning--can't use both author and editor fields in Kant1790-KANCOJ-2
+You've used 25 entries,
+            1935 wiz_defined-function locations,
+            627 strings with 7027 characters,
+and the built_in function-call counts, 8857 in all, are:
+= -- 882
+> -- 261
+< -- 24
++ -- 86
+- -- 80
+* -- 709
+:= -- 1552
+add.period$ -- 75
+call.type$ -- 25
+change.case$ -- 159
+chr.to.int$ -- 25
+cite$ -- 27
+duplicate$ -- 358
+empty$ -- 679
+format.name$ -- 121
+if$ -- 1730
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 31
+newline$ -- 127
+num.names$ -- 75
+pop$ -- 131
+preamble$ -- 1
+purify$ -- 165
+quote$ -- 0
+skip$ -- 277
+stack$ -- 0
+substring$ -- 681
+swap$ -- 33
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 138
+warning$ -- 2
+while$ -- 80
+width$ -- 0
+write$ -- 320
+(There were 2 warnings)
