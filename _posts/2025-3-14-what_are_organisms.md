@@ -4,6 +4,8 @@ title: "What are (and aren't) organisms!?"
 date: 2025-03-14
 ---
 
+Most of this can probably be found in a better manner [here](https://gbragafibra.github.io/notes/organizational_closure_remarks.pdf). Unsure if majority of these concepts actually provide enough (if any, in some cases) value. 
+
 ---
 
 It is often said that organisms perceive a certain part of their environment, what is called the organism's umwelt. In a sense, what organisms perceive of the world is a reflection of their constraints. What is frequently left underexplained (if not at times unexplained) is which general characteristics differentiate organisms from other physical systems, and what (and what for) is "perceive" as referred previously.
