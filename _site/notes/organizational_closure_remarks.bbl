@@ -1,9 +1,25 @@
 \begin{thebibliography}{}
 
+\bibitem[Bechtel, 2011]{bechtel2011mechanism}
+Bechtel, W. (2011).
+\newblock Mechanism and biological explanation.
+\newblock {\em Philosophy of science}, 78(4):533--557.
+
+\bibitem[Bich and Bechtel, 2021]{bich2021mechanism}
+Bich, L. and Bechtel, W. (2021).
+\newblock Mechanism, autonomy and biological explanation.
+\newblock {\em Biology \& Philosophy}, 36(6):53.
+
 \bibitem[Bich et~al., 2016]{bich2016biological}
 Bich, L., Mossio, M., Ruiz-Mirazo, K., and Moreno, A. (2016).
 \newblock Biological regulation: controlling the system from within.
 \newblock {\em Biology \& Philosophy}, 31:237--265.
+
+\bibitem[C{\'a}rdenas et~al., 2010]{cardenas2010closure}
+C{\'a}rdenas, M.~L., Letelier, J.-C., Gutierrez, C., Cornish-Bowden, A., and
+  Soto-Andrade, J. (2010).
+\newblock Closure to efficient causation, computability and artificial life.
+\newblock {\em Journal of Theoretical Biology}, 263(1):79--92.
 
 \bibitem[Craver and Bechtel, 2007]{craver2007top}
 Craver, C.~F. and Bechtel, W. (2007).
@@ -66,6 +82,13 @@ Kauffman, S.~A. (2000).
 \newblock {\em Investigations}.
 \newblock Oxford University Press.
 
+\bibitem[Letelier et~al., 2006]{letelier2006organizational}
+Letelier, J.-C., Soto-Andrade, J., Abarz{\'u}a, F.~G., Cornish-Bowden, A., and
+  C{\'a}rdenas, M.~L. (2006).
+\newblock Organizational invariance and metabolic closure: analysis in terms of
+  (m, r) systems.
+\newblock {\em Journal of theoretical biology}, 238(4):949--961.
+
 \bibitem[Marshall, 2021]{marshall2021regeneration}
 Marshall, W.~F. (2021).
 \newblock Regeneration in {S}tentor coeruleus.
@@ -113,6 +136,14 @@ Rosen, R. (1991).
 Slabodnick, M.~M. and Marshall, W.~F. (2014).
 \newblock Stentor coeruleus.
 \newblock {\em Current Biology}, 24(17):R783--R784.
+
+\bibitem[Soto-Andrade et~al., 2011]{soto2011ouroboros}
+Soto-Andrade, J., Jaramillo, S., Guti{\'e}rrez, C., and Letelier, J.-C. (2011).
+\newblock Ouroboros avatars: A mathematical exploration of self-reference and
+  metabolic closure.
+\newblock In {\em Advances in artificial life ECAL 2011: Proceedings of the
+  eleventh European conference on the synthesis and simulation of living
+  systems}, pages 763--770. The MIT Press, Cambridge, MA.
 
 \bibitem[Tartar, 1961]{tartar1961biology}
 Tartar, V. (1961).

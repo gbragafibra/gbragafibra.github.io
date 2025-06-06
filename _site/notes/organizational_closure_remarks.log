@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.3.14)  1 JUN 2025 14:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.3.14)  3 JUN 2025 12:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -823,42 +823,56 @@ l.63
 <to be read again> 
                    \relax 
 l.69 
-      [4] (./organizational_closure_remarks.bblpdfTeX warning (ext4): destinati
+      [4]pdfTeX warning (ext4): destination with the same identifier (name{page
+.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.95 
+      [5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.95 
+      [6] (./organizational_closure_remarks.bblpdfTeX warning (ext4): destinati
 on with the same identifier (name{page.}) has been already used, duplicate igno
 red
 <to be read again> 
                    \relax 
-l.38 
-      [5]pdfTeX warning (ext4): destination with the same identifier (name{page
-.}) has been already used, duplicate ignored
+l.64 ...m[Hofmeyr, 2021]{hofmeyr2021biochemically}
+                                                   [7]pdfTeX warning (ext4): de
+stination with the same identifier (name{page.}) has been already used, duplica
+te ignored
 <to be read again> 
                    \relax 
-l.128 ...em[Weber and Varela, 2002]{weber2002life}
-                                                   [6])pdfTeX warning (ext4): d
-estination with the same identifier (name{page.}) has been already used, duplic
-ate ignored
+l.148 \bibitem[Tartar, 1961]{tartar1961biology}
+                                                [8])pdfTeX warning (ext4): dest
+ination with the same identifier (name{page.}) has been already used, duplicate
+ ignored
 <to be read again> 
                    \relax 
-l.94 \end{document}
-                    [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 94.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 94.
+l.103 \end{document}
+                     [9]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 103.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
  (./organizational_closure_remarks.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 94.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 94.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 103.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 103.
 Package rerunfilecheck Info: File `organizational_closure_remarks.out' has not 
 changed.
-(rerunfilecheck)             Checksum: A3ABB409FAAB45AB78A9B7941E071115;185.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 94.
+(rerunfilecheck)             Checksum: 785DA6E118FA802123C53B5CFBCF0A70;263.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
  ) 
 Here is how much of TeX's memory you used:
- 19873 strings out of 483065
- 392230 string characters out of 5963550
- 665587 words of memory out of 5000000
- 34481 multiletter control sequences out of 15000+600000
+ 19898 strings out of 483065
+ 392817 string characters out of 5963550
+ 669769 words of memory out of 5000000
+ 34499 multiletter control sequences out of 15000+600000
  543949 words of font info for 69 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
- 60i,10n,67p,2347b,779s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,10n,67p,2348b,791s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
@@ -869,10 +883,10 @@ ype1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /symbols/msam10.pfb>
-Output written on organizational_closure_remarks.pdf (7 pages, 140747 bytes).
+Output written on organizational_closure_remarks.pdf (9 pages, 151189 bytes).
 PDF statistics:
- 218 PDF objects out of 1000 (max. 8388607)
- 197 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 37 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 256 PDF objects out of 1000 (max. 8388607)
+ 232 compressed objects within 3 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 45 words of extra memory for PDF output out of 10000 (max. 10000000)
 

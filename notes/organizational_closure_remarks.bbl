@@ -1,5 +1,16 @@
 \begin{thebibliography}{}
 
+\bibitem[Alon, 2019]{alon2019introduction}
+Alon, U. (2019).
+\newblock {\em An introduction to systems biology: design principles of
+  biological circuits}.
+\newblock Chapman and Hall/CRC.
+
+\bibitem[Banani et~al., 2017]{banani2017biomolecular}
+Banani, S.~F., Lee, H.~O., Hyman, A.~A., and Rosen, M.~K. (2017).
+\newblock Biomolecular condensates: organizers of cellular biochemistry.
+\newblock {\em Nature reviews Molecular cell biology}, 18(5):285--298.
+
 \bibitem[Bechtel, 2011]{bechtel2011mechanism}
 Bechtel, W. (2011).
 \newblock Mechanism and biological explanation.
@@ -36,6 +47,11 @@ Di~Paolo, E.~A. (2005).
 \newblock Autopoiesis, adaptivity, teleology, agency.
 \newblock {\em Phenomenology and the cognitive sciences}, 4(4):429--452.
 
+\bibitem[Egbert et~al., 2010]{egbert2010minimal}
+Egbert, M.~D., Barandiaran, X.~E., and Di~Paolo, E.~A. (2010).
+\newblock A minimal model of metabolism-based chemotaxis.
+\newblock {\em PLoS computational biology}, 6(12):e1001004.
+
 \bibitem[Garc{\'\i}a-Valdecasas, 2022]{garcia2022naturalisation}
 Garc{\'\i}a-Valdecasas, M. (2022).
 \newblock On the naturalisation of teleology: Self-organisation, autopoiesis
@@ -52,6 +68,11 @@ Glansdorff, P., Prigogine, I., and Hill, R.~N. (1973).
 \newblock Thermodynamic theory of structure, stability and fluctuations.
 \newblock {\em American Journal of Physics}, 41(1):147--148.
 
+\bibitem[Harmon and J{\"u}licher, 2022]{harmon2022molecular}
+Harmon, T.~S. and J{\"u}licher, F. (2022).
+\newblock Molecular assembly lines in active droplets.
+\newblock {\em Physical review letters}, 128(10):108102.
+
 \bibitem[Hofmeyr, 2017]{hofmeyr2017basic}
 Hofmeyr, J.-H.~S. (2017).
 \newblock Basic biological anticipation.
@@ -66,6 +87,16 @@ Hofmeyr, J.-H.~S. (2021).
 \newblock A biochemically-realisable relational model of the self-manufacturing
   cell.
 \newblock {\em Biosystems}, 207:104463.
+
+\bibitem[Hofmeyr and Cornish-Bowden, 1991]{hofmeyr1991quantitative}
+Hofmeyr, J.-H.~S. and Cornish-Bowden, A. (1991).
+\newblock Quantitative assessment of regulation in metabolic systems.
+\newblock {\em European Journal of Biochemistry}, 200(1):223--236.
+
+\bibitem[Holehouse and Alberti, 2025]{holehouse2025molecular}
+Holehouse, A.~S. and Alberti, S. (2025).
+\newblock Molecular determinants of condensate composition.
+\newblock {\em Molecular cell}, 85(2):290--308.
 
 \bibitem[Jonas, 2001]{jonas2001phenomenon}
 Jonas, H. (2001).
@@ -82,12 +113,42 @@ Kauffman, S.~A. (2000).
 \newblock {\em Investigations}.
 \newblock Oxford University Press.
 
+\bibitem[Kirschbaum, 2022]{kirschbaum2022chemical}
+Kirschbaum, J. (2022).
+\newblock Chemical reactions as control mechanisms for biomolecular
+  condensates.
+
+\bibitem[Kopelman, 1988]{kopelman1988fractal}
+Kopelman, R. (1988).
+\newblock Fractal reaction kinetics.
+\newblock {\em science}, 241(4873):1620--1626.
+
+\bibitem[Lauber et~al., 2023]{lauber2023collective}
+Lauber, N., Tichacek, O., Narayanankutty, K., De~Martino, D., and Ruiz-Mirazo,
+  K. (2023).
+\newblock Collective catalysis under spatial constraints: Phase separation and
+  size-scaling effects on mass action kinetics.
+\newblock {\em Physical Review E}, 108(4):044410.
+
 \bibitem[Letelier et~al., 2006]{letelier2006organizational}
 Letelier, J.-C., Soto-Andrade, J., Abarz{\'u}a, F.~G., Cornish-Bowden, A., and
   C{\'a}rdenas, M.~L. (2006).
 \newblock Organizational invariance and metabolic closure: analysis in terms of
   (m, r) systems.
 \newblock {\em Journal of theoretical biology}, 238(4):949--961.
+
+\bibitem[Longo et~al., 2014]{longo2014physics}
+Longo, G., Mont{\'e}vil, M., Longo, G., and Mont{\'e}vil, M. (2014).
+\newblock From physics to biology by extending criticality and symmetry
+  breakings.
+\newblock {\em Perspectives on Organisms: Biological Time, Symmetries and
+  Singularities}, pages 161--185.
+
+\bibitem[Lyon et~al., 2021]{lyon2021framework}
+Lyon, A.~S., Peeples, W.~B., and Rosen, M.~K. (2021).
+\newblock A framework for understanding the functions of biomolecular
+  condensates across scales.
+\newblock {\em Nature reviews Molecular cell biology}, 22(3):215--235.
 
 \bibitem[Marshall, 2021]{marshall2021regeneration}
 Marshall, W.~F. (2021).
@@ -137,6 +198,12 @@ Slabodnick, M.~M. and Marshall, W.~F. (2014).
 \newblock Stentor coeruleus.
 \newblock {\em Current Biology}, 24(17):R783--R784.
 
+\bibitem[S{\"o}ding et~al., 2020]{soding2020mechanisms}
+S{\"o}ding, J., Zwicker, D., Sohrabi-Jahromi, S., Boehning, M., and Kirschbaum,
+  J. (2020).
+\newblock Mechanisms for active regulation of biomolecular condensates.
+\newblock {\em Trends in cell biology}, 30(1):4--14.
+
 \bibitem[Soto-Andrade et~al., 2011]{soto2011ouroboros}
 Soto-Andrade, J., Jaramillo, S., Guti{\'e}rrez, C., and Letelier, J.-C. (2011).
 \newblock Ouroboros avatars: A mathematical exploration of self-reference and
@@ -155,6 +222,11 @@ Tartar, V. (1961).
 Varela, F.~J. (2025).
 \newblock {\em Principles of biological autonomy}.
 \newblock MIT Press.
+
+\bibitem[Voit, 2013]{voit2013biochemical}
+Voit, E.~O. (2013).
+\newblock Biochemical systems theory: a review.
+\newblock {\em International Scholarly Research Notices}, 2013(1):897658.
 
 \bibitem[Weber and Varela, 2002]{weber2002life}
 Weber, A. and Varela, F.~J. (2002).

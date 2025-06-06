@@ -5,45 +5,46 @@ The style file: apalike.bst
 Database file #1: closure_refs.bib
 Warning--empty journal in hofmeyr2017basic
 Warning--can't use both author and editor fields in Kant1790-KANCOJ-2
-You've used 30 entries,
+Warning--empty journal in kirschbaum2022chemical
+You've used 43 entries,
             1935 wiz_defined-function locations,
-            659 strings with 8159 characters,
-and the built_in function-call counts, 11118 in all, are:
-= -- 1107
-> -- 360
-< -- 27
-+ -- 120
-- -- 114
-* -- 911
-:= -- 1935
-add.period$ -- 91
-call.type$ -- 30
-change.case$ -- 201
-chr.to.int$ -- 30
-cite$ -- 32
-duplicate$ -- 441
-empty$ -- 834
-format.name$ -- 162
-if$ -- 2176
+            739 strings with 10476 characters,
+and the built_in function-call counts, 16379 in all, are:
+= -- 1621
+> -- 565
+< -- 35
++ -- 194
+- -- 182
+* -- 1379
+:= -- 2843
+add.period$ -- 129
+call.type$ -- 43
+change.case$ -- 299
+chr.to.int$ -- 43
+cite$ -- 46
+duplicate$ -- 631
+empty$ -- 1209
+format.name$ -- 249
+if$ -- 3195
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 36
-newline$ -- 152
-num.names$ -- 90
-pop$ -- 166
+missing$ -- 50
+newline$ -- 216
+num.names$ -- 129
+pop$ -- 243
 preamble$ -- 1
-purify$ -- 207
+purify$ -- 306
 quote$ -- 0
-skip$ -- 340
+skip$ -- 488
 stack$ -- 0
-substring$ -- 848
-swap$ -- 47
-text.length$ -- 3
+substring$ -- 1267
+swap$ -- 68
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 168
-warning$ -- 2
-while$ -- 100
+type$ -- 244
+warning$ -- 3
+while$ -- 145
 width$ -- 0
-write$ -- 386
-(There were 2 warnings)
+write$ -- 551
+(There were 3 warnings)
