@@ -21,13 +21,13 @@ and the corresponding tape development over time (↓):
 
 ![](/gifs/developed_collatz_tape27.png)
 
-It has a stopping time of $τ = 111$, and at the last iteration before halting the tape as 13 marked cells (or 1s) - $Σ = 13$. Furthermore, from said last iteration we can also get the tape configuration in a compressed form (in a similar manner as discussed in [this blog post](https://www.sligocki.com/2021/07/17/bb-collatz.html)). It will look like this $T = 1000000011111011010000110011$, which in a more compressed format will be shown as $T = 1^{1}0^{7}1^{5}0^{1}1^{2}0^{1}1^{1}0^{4}1^{2}0^{2}1^{2}$ (and of course ignoring the infinite sequences of zeros on the left- and right-hand sides of the tape, i.e. $T = 0^{\infty}1^{1}0^{7}1^{5}0^{1}1^{2}0^{1}1^{1}0^{4}1^{2}0^{2}1^{2}0^{\infty}$). We'll also consider $1^{\text{space}(n)}$ where $\text{space}(n)$ is the number of uniquely visited tape cells. For $n = 27$, $\text{space}(n) = 30$, such that $1^{30} = 11111111111111111111111111111$. What we're interested in is the ratio $\frac{T}{1^{\text{space}(n)}}$. In the case of $n = 27$ we have:
+It has a stopping time of $τ = 111$, and at the last iteration before halting the tape has 13 marked cells (or 1s) - $Σ = 13$. Furthermore, from said last iteration we can also get the tape configuration in a compressed form (in a similar manner as discussed in [this blog post](https://www.sligocki.com/2021/07/17/bb-collatz.html)). It will look like this $T = 1000000011111011010000110011$, which in a more compressed format will be shown as $T = 1^{1}0^{7}1^{5}0^{1}1^{2}0^{1}1^{1}0^{4}1^{2}0^{2}1^{2}$ (and of course ignoring the infinite sequences of zeros on the left- and right-hand sides of the tape, i.e. $T = 0^{\infty}1^{1}0^{7}1^{5}0^{1}1^{2}0^{1}1^{1}0^{4}1^{2}0^{2}1^{2}0^{\infty}$). We'll also consider $1^{\text{space}(n)}$ where $\text{space}(n)$ is the number of uniquely visited tape cells. For $n = 27$, $\text{space}(n) = 30$, such that $1^{30} = 11111111111111111111111111111$. What we're interested in is the ratio $\frac{T}{1^{\text{space}(n)}}$. In the case of $n = 27$ we have:
 
 $$
 \frac{T}{1^{\text{space}(n)}} = \frac{1^{1}0^{7}1^{5}0^{1}1^{2}0^{1}1^{1}0^{4}1^{2}0^{2}1^{2}}{1^{30}} = \frac{1000000011111011010000110011}{11111111111111111111111111111} ≈ 0.009
 $$
 
-This ratio can generally be interpreted as the capacity of each $n$ to mark (and keep marked) every cell which it visits. Trivial examples with $\frac{T}{1^{\text{space}(n)}} = 1$ are powers of 2, which always move right and convert 0s into 1s until halting.
+This ratio can generally be interpreted as the capacity of each $n$ to mark (and keep marked) every cell which it visits. The only examples with $\frac{T}{1^{\text{space}(n)}} = 1$ are powers of 2, which always move right and convert 0s into 1s until halting.
 
 Ok. Now, let's see how such ratio changes for $n$ from $n = 2$ to $n = 10^{3}$ (also representing a color-coding for $Σ/τ$ and showing a histogram for $T/1^{\text{space}(n)}$):
 
